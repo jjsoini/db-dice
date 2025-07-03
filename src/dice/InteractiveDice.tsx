@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/three";
 import { ThreeEvent, useThree } from "@react-three/fiber";
-import { Raycaster, Vector2 } from "three";
-import { Group } from "three";
+import { Raycaster, Vector2, Group } from "three";
 
 import { Die } from "../types/Die";
 import { Dice } from "./Dice";
