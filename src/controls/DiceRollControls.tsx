@@ -255,7 +255,7 @@ function DicePickedControls() {
       >
         <Tooltip title="Clear" disableInteractive>
           <IconButton
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
               e.stopPropagation();
               handleReset();
             }}
