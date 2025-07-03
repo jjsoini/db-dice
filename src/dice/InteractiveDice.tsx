@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/three";
 import { ThreeEvent, useThree } from "@react-three/fiber";
 import { Raycaster, Vector2 } from "three";
+import { Group } from "three";
 
 import { Die } from "../types/Die";
 import { Dice } from "./Dice";
@@ -29,7 +30,7 @@ export function InteractiveDice(
     die: Die;
   }
 ) {
-  const diceRef = useRef<THREE.Group>(null);
+  const diceRef = useRef<Group>(null);
   const [dragAnchor, setDragAnchor] = useState<DiceVector3 | null>(null);
 
   const { invalidate, camera, size } = useThree();

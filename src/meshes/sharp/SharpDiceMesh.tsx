@@ -1,5 +1,6 @@
 import React from "react";
 import { DiceType } from "../../types/DiceType";
+import { Group } from "three";
 
 import { D10 } from "./D10";
 import { D12 } from "./D12";
@@ -10,7 +11,7 @@ import { D8 } from "./D8";
 
 type Props = JSX.IntrinsicElements["group"] & { diceType: DiceType };
 
-export const SharpDiceMesh = React.forwardRef<THREE.Group, Props>(
+export const SharpDiceMesh = React.forwardRef<Group, Props>(
   ({ diceType, ...props }, ref) => {
     switch (diceType) {
       case "D4":
