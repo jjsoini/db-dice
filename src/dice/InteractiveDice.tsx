@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/three";
 import { ThreeEvent, useThree } from "@react-three/fiber";
-import { Raycaster, Vector2, Group } from "three";
+import * as THREE from "three";
 
 import { Die } from "../types/Die";
 import { Dice } from "./Dice";
@@ -15,8 +15,8 @@ import {
   randomRotation,
 } from "../helpers/DiceThrower";
 
-const raycaster = new Raycaster();
-const pointer = new Vector2();
+const raycaster = new THREE.Raycaster();
+const pointer = new THREE.Vector2();
 
 const DRAG_HEIGHT = 0.5;
 const DRAG_HISTORY_WINDOW_SIZE = 5;
@@ -29,7 +29,7 @@ export function InteractiveDice(
     die: Die;
   }
 ) {
-  const diceRef = useRef<Group>(null);
+  const diceRef = useRef<THREE.Group>(null);
   const [dragAnchor, setDragAnchor] = useState<DiceVector3 | null>(null);
 
   const { invalidate, camera, size } = useThree();
